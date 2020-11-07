@@ -18,7 +18,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     struct ListNode *p1 = l1, *p2 = l2, *tmp, *more;
     int plus = 0, digit = 0, count = 0, sum = 0;
 
-    // make two linked list the same length
+    // METHOD_1:make two linked list the same length
     int len1 = 0, len2 = 0;
     while(p1!=0){
         len1++;
@@ -57,7 +57,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
             tmp = tmp->next;
         more = (struct ListNode*)malloc(sizeof(struct ListNode));
         tmp->next = more;
-        tmp = tmp->next;
+        tmp = tmp->next; // tmp = tmp->next 经常性的遗忘
         tmp->val = 1;
         tmp->next = NULL;
     }
